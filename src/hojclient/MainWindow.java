@@ -1104,26 +1104,56 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void startProcLoad1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad1ActionPerformed
         // TODO Mitä tehdään kun keittimen täytön ruuvikuljetin 1 käynnistetään
+    	try {
+    		laitos.startKeittimienT�ytin(1);
+    	} catch(Exception e) {
+    		System.out.println(e);
+    	}
     }//GEN-LAST:event_startProcLoad1ActionPerformed
 
     private void startProcLoad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad2ActionPerformed
         // TODO Mitä tehdään kun keittimen täytön ruuvikuljetin 1 käynnistetään
+    	try {
+    		laitos.startKeittimienT�ytin(2);
+    	} catch(Exception e) {
+    		System.out.println(e);
+    	}
     }//GEN-LAST:event_startProcLoad2ActionPerformed
 
     private void reserveSilo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo1ActionPerformed
         // TODO Mitä tehdään kun siilo1 varataan?
+    	try {
+    		laitos.varaaSiilo(1);
+    	} catch(Exception e) {
+    		System.out.println(e);
+    	}
     }//GEN-LAST:event_reserveSilo1ActionPerformed
 
     private void reserveSilo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo2ActionPerformed
         // TODO Mitä tehdään kun siilo2 varataan?
+    	try {
+    		laitos.varaaSiilo(2);
+    	} catch(Exception e) {
+    		System.out.println(e);
+    	}
     }//GEN-LAST:event_reserveSilo2ActionPerformed
 
     private void reserveSilo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo3ActionPerformed
         // TODO Mitä tehdään kun siilo3 varataan?
+    	try {
+    		laitos.varaaSiilo(3);
+    	} catch(Exception e) {
+    		System.out.println(e);
+    	}
     }//GEN-LAST:event_reserveSilo3ActionPerformed
 
     private void reserveSilo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo4ActionPerformed
         // TODO Mitä tehdään kun siilo4 varataan?
+    	try {
+    		laitos.varaaSiilo(4);
+    	} catch(Exception e) {
+    		System.out.println(e);
+    	}
     }//GEN-LAST:event_reserveSilo4ActionPerformed
 
     private void reserveProc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc1ActionPerformed
