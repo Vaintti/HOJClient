@@ -1103,25 +1103,27 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_signInActionPerformed
 
     private void startProcLoad1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad1ActionPerformed
-        // TODO Mitä tehdään kun keittimen täytön ruuvikuljetin 1 käynnistetään
+        // Mitä tehdään kun keittimen täytön ruuvikuljetin 1 käynnistetään
     	try {
     		laitos.startKeittimienT�ytin(1);
+    		// TODO procLoadAmount1.kuuntelija
     	} catch(Exception e) {
     		System.out.println(e);
     	}
     }//GEN-LAST:event_startProcLoad1ActionPerformed
 
     private void startProcLoad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad2ActionPerformed
-        // TODO Mitä tehdään kun keittimen täytön ruuvikuljetin 1 käynnistetään
+        // Mitä tehdään kun keittimen täytön ruuvikuljetin 1 käynnistetään
     	try {
     		laitos.startKeittimienT�ytin(2);
+    		// TODO procLoadAmount2.kuuntelija
     	} catch(Exception e) {
     		System.out.println(e);
     	}
     }//GEN-LAST:event_startProcLoad2ActionPerformed
 
     private void reserveSilo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo1ActionPerformed
-        // TODO Mitä tehdään kun siilo1 varataan?
+        // Mitä tehdään kun siilo1 varataan?
     	try {
     		laitos.varaaSiilo(1);
     	} catch(Exception e) {
@@ -1130,7 +1132,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveSilo1ActionPerformed
 
     private void reserveSilo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo2ActionPerformed
-        // TODO Mitä tehdään kun siilo2 varataan?
+        // Mitä tehdään kun siilo2 varataan?
     	try {
     		laitos.varaaSiilo(2);
     	} catch(Exception e) {
@@ -1139,7 +1141,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveSilo2ActionPerformed
 
     private void reserveSilo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo3ActionPerformed
-        // TODO Mitä tehdään kun siilo3 varataan?
+        //Mitä tehdään kun siilo3 varataan?
     	try {
     		laitos.varaaSiilo(3);
     	} catch(Exception e) {
@@ -1148,7 +1150,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveSilo3ActionPerformed
 
     private void reserveSilo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo4ActionPerformed
-        // TODO Mitä tehdään kun siilo4 varataan?
+        //Mitä tehdään kun siilo4 varataan?
     	try {
     		laitos.varaaSiilo(4);
     	} catch(Exception e) {
@@ -1157,7 +1159,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveSilo4ActionPerformed
 
     private void reserveProc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc1ActionPerformed
-        // TODO Mitä tehdään kun keitin1 varataan?
+        // Mitä tehdään kun keitin1 varataan?
     	try{
     		laitos.varaaKeitin(1);
     	} catch(Exception e) {
@@ -1166,7 +1168,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveProc1ActionPerformed
 
     private void startProc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc1ActionPerformed
-        // TODO Mitä tehdään kun keitin1 käynnistetään?
+        // Mitä tehdään kun keitin1 käynnistetään?
     	try{
     		laitos.k�ynnist�Keitin(1);
     	} catch(Exception e) {
@@ -1175,7 +1177,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_startProc1ActionPerformed
 
     private void reserveProc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc2ActionPerformed
-        // TODO Mitä tehdään kun keitin2 varataan?
+        // Mitä tehdään kun keitin2 varataan?
     	try{
     		laitos.varaaKeitin(2);
     	} catch(Exception e) {
@@ -1184,7 +1186,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveProc2ActionPerformed
 
     private void startProc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc2ActionPerformed
-        // TODO Mitä tehdään kun keitin2 käynnistetään?
+        // Mitä tehdään kun keitin2 käynnistetään?
     	try{
     		laitos.k�ynnist�Keitin(2);
     	} catch(Exception e) {
@@ -1193,7 +1195,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_startProc2ActionPerformed
 
     private void reserveProc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc3ActionPerformed
-        // TODO Mitä tehdään kun keitin3 varataan?
+        //  Mitä tehdään kun keitin3 varataan?
     	try{
     		laitos.varaaKeitin(3);
     	} catch(Exception e) {
@@ -1202,7 +1204,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveProc3ActionPerformed
 
     private void startProc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc3ActionPerformed
-        // TODO Mitä tehdään kun keitin3 käynnistetään?
+        // Mitä tehdään kun keitin3 käynnistetään?
     	try{
     		laitos.k�ynnist�Keitin(3);
     	} catch(Exception e) {
@@ -1211,7 +1213,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_startProc3ActionPerformed
 
     private void startPump1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPump1ActionPerformed
-        // TODO Mitä tehdään kun pumppu1 käynnistetään?
+        // Mitä tehdään kun pumppu1 käynnistetään?
     	try{
     		laitos.k�ynnist�Pumppu(1);
     	} catch(Exception e) {
@@ -1220,7 +1222,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_startPump1ActionPerformed
 
     private void startPump2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPump2ActionPerformed
-        // TODO Mitä tehdään kun pumppu2 käynnistetään?
+        // Mitä tehdään kun pumppu2 käynnistetään?
     	try{
     		laitos.k�ynnist�Pumppu(2);
     	} catch(Exception e) {
@@ -1229,7 +1231,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_startPump2ActionPerformed
 
     private void startBpump1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBpump1ActionPerformed
-        // TODO Mitä tehdään kun pumppu1 pullotukseen käynnistetään?
+        // Mitä tehdään kun pumppu1 pullotukseen käynnistetään?
     	try{
     		laitos.k�ynnist�PullotusPumppu(1);
     	} catch(Exception e) {
@@ -1238,7 +1240,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_startBpump1ActionPerformed
 
     private void startBpump2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBpump2ActionPerformed
-        // TODO Mitä tehdään kun pumppu2 pullotukseen käynnistetään?
+        // Mitä tehdään kun pumppu2 pullotukseen käynnistetään?
     	try{
     		laitos.k�ynnist�PullotusPumppu(2);
     	} catch(Exception e) {
@@ -1247,7 +1249,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_startBpump2ActionPerformed
 
     private void reserveTank1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank1ActionPerformed
-        // TODO Mitä tehdään kun säiliö1 varataan?
+        // Mitä tehdään kun säiliö1 varataan?
     	try{
     		laitos.varaaS�ili�(1);
     	} catch(Exception e) {
@@ -1256,7 +1258,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveTank1ActionPerformed
 
     private void reserveTank2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank2ActionPerformed
-        // TODO Mitä tehdään kun säiliö2 varataan?
+        // Mitä tehdään kun säiliö2 varataan?
     	try{
     		laitos.varaaS�ili�(2);
     	} catch(Exception e) {
@@ -1265,7 +1267,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveTank2ActionPerformed
 
     private void reserveTank3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank3ActionPerformed
-        // TODO Mitä tehdään kun säiliö3 varataan?
+        // Mitä tehdään kun säiliö3 varataan?
     	try{
     		laitos.varaaS�ili�(3);
     	} catch(Exception e) {
@@ -1274,7 +1276,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveTank3ActionPerformed
 
     private void reserveTank4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank4ActionPerformed
-        // TODO Mitä tehdään kun säiliö4 varataan?
+        // Mitä tehdään kun säiliö4 varataan?
     	try{
     		laitos.varaaS�ili�(4);
     	} catch(Exception e) {
@@ -1283,7 +1285,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveTank4ActionPerformed
 
     private void reserveTank5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank5ActionPerformed
-        // TODO Mitä tehdään kun säiliö5 varataan?
+        // Mitä tehdään kun säiliö5 varataan?
     	try{
     		laitos.varaaS�ili�(5);
     	} catch(Exception e) {
@@ -1292,7 +1294,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveTank5ActionPerformed
 
     private void reserveTank6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank6ActionPerformed
-        // TODO Mitä tehdään kun säiliö6 varataan?
+        // Mitä tehdään kun säiliö6 varataan?
     	try{
     		laitos.varaaS�ili�(6);
     	} catch(Exception e) {
@@ -1301,7 +1303,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveTank6ActionPerformed
 
     private void reserveTank7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank7ActionPerformed
-        // TODO Mitä tehdään kun säiliö7 varataan?
+        // Mitä tehdään kun säiliö7 varataan?
     	try{
     		laitos.varaaS�ili�(7);
     	} catch(Exception e) {
@@ -1310,7 +1312,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveTank7ActionPerformed
 
     private void reserveTank8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank8ActionPerformed
-        // TODO Mitä tehdään kun säiliö8 varataan?
+        //  Mitä tehdään kun säiliö8 varataan?
     	try{
     		laitos.varaaS�ili�(8);
     	} catch(Exception e) {
@@ -1319,7 +1321,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveTank8ActionPerformed
 
     private void reserveTank9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank9ActionPerformed
-        // TODO Mitä tehdään kun säiliö9 varataan?
+        // Mitä tehdään kun säiliö9 varataan?
     	try{
     		laitos.varaaS�ili�(9);
     	} catch(Exception e) {
@@ -1328,7 +1330,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveTank9ActionPerformed
 
     private void reserveTank10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank10ActionPerformed
-        // TODO Mitä tehdään kun säiliö10 varataan?
+        // Mitä tehdään kun säiliö10 varataan?
     	try{
     		laitos.varaaS�ili�(10);
     	} catch(Exception e) {
@@ -1338,6 +1340,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void procLoadAmount2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procLoadAmount2ActionPerformed
         // TODO add your handling code here:
+    	
     }//GEN-LAST:event_procLoadAmount2ActionPerformed
 
     private void procLoadAmount1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procLoadAmount1ActionPerformed
