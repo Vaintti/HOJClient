@@ -18,6 +18,7 @@ import tuotannonohjaus.LaitosRajapinta;
 public class MainWindow extends javax.swing.JFrame {
 	Registry registry;
 	LaitosRajapinta laitos;
+	String[] identifier;
     /**
      * Creates new form MainWindow
      */
@@ -1097,6 +1098,12 @@ public class MainWindow extends javax.swing.JFrame {
         	registry = LocateRegistry.getRegistry(2020);
         	laitos = (LaitosRajapinta)registry.lookup("laitos");
         	laitos.testi();
+        	if(identifier == null) {
+        		identifier = laitos.login(userName.getText());
+        	}
+        	else {
+        		laitos.logout(this.identifier);
+        	}
         }catch(Exception e){
         	System.out.println(e);
         }
@@ -1475,4 +1482,11 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField userName;
     private javax.swing.JLabel userNameLabel;
     // End of variables declaration//GEN-END:variables
+    public class Updater implements Runnable {
+    	public void run() {
+    		while(true) {
+    			
+    		}
+    	}
+    }
 }
