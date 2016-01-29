@@ -1495,7 +1495,7 @@ public class MainWindow extends javax.swing.JFrame {
     		while(true) {
     			try{
     				Laitos l = laitos.update();
-    				
+    				if(laitos)
     			}catch(Exception e) {
     				
     			}
