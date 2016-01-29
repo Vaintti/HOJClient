@@ -9,6 +9,7 @@ package hojclient;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import tuotannonohjaus.Laitos;
 import tuotannonohjaus.LaitosRajapinta;
 
  
@@ -1111,8 +1112,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void startProcLoad1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad1ActionPerformed
         // Mit√§ tehd√§√§n kun keittimen t√§yt√∂n ruuvikuljetin 1 k√§ynnistet√§√§n
     	try {
-    		laitos.startKeittimienT‰ytin(1, 200, identifier);
-    		// TODO procLoadAmount1.kuuntelija
+    		laitos.startKeittimienT‰ytin(0, Integer.parseInt(procLoadAmount1.getText()), identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1121,7 +1121,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void startProcLoad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad2ActionPerformed
         // Mit√§ tehd√§√§n kun keittimen t√§yt√∂n ruuvikuljetin 1 k√§ynnistet√§√§n
     	try {
-    		laitos.startKeittimienT‰ytin(2, 200, identifier);
+    		laitos.startKeittimienT‰ytin(1, Integer.parseInt(procLoadAmount2.getText()), identifier);
     		// TODO procLoadAmount2.kuuntelija
     	} catch(Exception e) {
     		System.out.println(e);
@@ -1131,7 +1131,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveSilo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo1ActionPerformed
         // Mit√§ tehd√§√§n kun siilo1 varataan?
     	try {
-    		laitos.varaaSiilo(1, identifier);
+    		laitos.varaaSiilo(0, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1140,7 +1140,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveSilo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo2ActionPerformed
         // Mit√§ tehd√§√§n kun siilo2 varataan?
     	try {
-    		laitos.varaaSiilo(2, identifier);
+    		laitos.varaaSiilo(1, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1149,7 +1149,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveSilo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo3ActionPerformed
         //Mit√§ tehd√§√§n kun siilo3 varataan?
     	try {
-    		laitos.varaaSiilo(3, identifier);
+    		laitos.varaaSiilo(2, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1158,7 +1158,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveSilo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo4ActionPerformed
         //Mit√§ tehd√§√§n kun siilo4 varataan?
     	try {
-    		laitos.varaaSiilo(4, identifier);
+    		laitos.varaaSiilo(3, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1167,7 +1167,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveProc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc1ActionPerformed
         // Mit√§ tehd√§√§n kun keitin1 varataan?
     	try{
-    		laitos.varaaKeitin(1, identifier);
+    		laitos.varaaKeitin(0, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1176,7 +1176,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void startProc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc1ActionPerformed
         // Mit√§ tehd√§√§n kun keitin1 k√§ynnistet√§√§n?
     	try{
-    		laitos.k‰ynnist‰Keitin(1, identifier);
+    		laitos.k‰ynnist‰Keitin(0, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1185,7 +1185,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveProc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc2ActionPerformed
         // Mit√§ tehd√§√§n kun keitin2 varataan?
     	try{
-    		laitos.varaaKeitin(2, identifier);
+    		laitos.varaaKeitin(1, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1194,7 +1194,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void startProc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc2ActionPerformed
         // Mit√§ tehd√§√§n kun keitin2 k√§ynnistet√§√§n?
     	try{
-    		laitos.k‰ynnist‰Keitin(2, identifier);
+    		laitos.k‰ynnist‰Keitin(1, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1203,7 +1203,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveProc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc3ActionPerformed
         //  Mit√§ tehd√§√§n kun keitin3 varataan?
     	try{
-    		laitos.varaaKeitin(3, identifier);
+    		laitos.varaaKeitin(2, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1212,7 +1212,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void startProc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc3ActionPerformed
         // Mit√§ tehd√§√§n kun keitin3 k√§ynnistet√§√§n?
     	try{
-    		laitos.k‰ynnist‰Keitin(3, identifier);
+    		laitos.k‰ynnist‰Keitin(2, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1221,7 +1221,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void startPump1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPump1ActionPerformed
         // Mit√§ tehd√§√§n kun pumppu1 k√§ynnistet√§√§n?
     	try{
-    		laitos.k‰ynnist‰Pumppu(1, identifier);
+    		laitos.k‰ynnist‰Pumppu(0, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1230,7 +1230,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void startPump2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPump2ActionPerformed
         // Mit√§ tehd√§√§n kun pumppu2 k√§ynnistet√§√§n?
     	try{
-    		laitos.k‰ynnist‰Pumppu(2, identifier);
+    		laitos.k‰ynnist‰Pumppu(1, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1239,7 +1239,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void startBpump1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBpump1ActionPerformed
         // Mit√§ tehd√§√§n kun pumppu1 pullotukseen k√§ynnistet√§√§n?
     	try{
-    		laitos.k‰ynnist‰PullotusPumppu(1, identifier);
+    		laitos.k‰ynnist‰PullotusPumppu(0, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1248,7 +1248,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void startBpump2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBpump2ActionPerformed
         // Mit√§ tehd√§√§n kun pumppu2 pullotukseen k√§ynnistet√§√§n?
     	try{
-    		laitos.k‰ynnist‰PullotusPumppu(2, identifier);
+    		laitos.k‰ynnist‰PullotusPumppu(1, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1257,7 +1257,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveTank1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank1ActionPerformed
         // Mit√§ tehd√§√§n kun s√§ili√∂1 varataan?
     	try{
-    		laitos.varaaS‰iliˆ(1, identifier);
+    		laitos.varaaS‰iliˆ(0, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1266,7 +1266,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveTank2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank2ActionPerformed
         // Mit√§ tehd√§√§n kun s√§ili√∂2 varataan?
     	try{
-    		laitos.varaaS‰iliˆ(2, identifier);
+    		laitos.varaaS‰iliˆ(1, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1275,7 +1275,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveTank3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank3ActionPerformed
         // Mit√§ tehd√§√§n kun s√§ili√∂3 varataan?
     	try{
-    		laitos.varaaS‰iliˆ(3, identifier);
+    		laitos.varaaS‰iliˆ(2, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1284,7 +1284,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveTank4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank4ActionPerformed
         // Mit√§ tehd√§√§n kun s√§ili√∂4 varataan?
     	try{
-    		laitos.varaaS‰iliˆ(4, identifier);
+    		laitos.varaaS‰iliˆ(3, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1293,7 +1293,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveTank5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank5ActionPerformed
         // Mit√§ tehd√§√§n kun s√§ili√∂5 varataan?
     	try{
-    		laitos.varaaS‰iliˆ(5, identifier);
+    		laitos.varaaS‰iliˆ(4, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1302,7 +1302,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveTank6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank6ActionPerformed
         // Mit√§ tehd√§√§n kun s√§ili√∂6 varataan?
     	try{
-    		laitos.varaaS‰iliˆ(6, identifier);
+    		laitos.varaaS‰iliˆ(5, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1311,7 +1311,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveTank7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank7ActionPerformed
         // Mit√§ tehd√§√§n kun s√§ili√∂7 varataan?
     	try{
-    		laitos.varaaS‰iliˆ(7, identifier);
+    		laitos.varaaS‰iliˆ(6, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1320,7 +1320,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveTank8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank8ActionPerformed
         //  Mit√§ tehd√§√§n kun s√§ili√∂8 varataan?
     	try{
-    		laitos.varaaS‰iliˆ(8, identifier);
+    		laitos.varaaS‰iliˆ(7, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1329,7 +1329,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveTank9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank9ActionPerformed
         // Mit√§ tehd√§√§n kun s√§ili√∂9 varataan?
     	try{
-    		laitos.varaaS‰iliˆ(9, identifier);
+    		laitos.varaaS‰iliˆ(8, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1338,7 +1338,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveTank10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank10ActionPerformed
         // Mit√§ tehd√§√§n kun s√§ili√∂10 varataan?
     	try{
-    		laitos.varaaS‰iliˆ(10, identifier);
+    		laitos.varaaS‰iliˆ(9, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1346,11 +1346,20 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void procLoadAmount2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procLoadAmount2ActionPerformed
         // TODO add your handling code here:
-    	
+    	try {
+    		laitos.startKeittimienT‰ytin(1, Integer.parseInt(procLoadAmount2.getText()), identifier);
+    	}catch(Exception e) {
+    		System.out.println(e);
+    	}
     }//GEN-LAST:event_procLoadAmount2ActionPerformed
 
     private void procLoadAmount1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procLoadAmount1ActionPerformed
         // TODO add your handling code here:
+    	try {
+    		laitos.startKeittimienT‰ytin(0, Integer.parseInt(procLoadAmount1.getText()), identifier);
+    	}catch(Exception e) {
+    		System.out.println(e);
+    	}
     }//GEN-LAST:event_procLoadAmount1ActionPerformed
 
     /**
@@ -1484,7 +1493,12 @@ public class MainWindow extends javax.swing.JFrame {
     public class Updater implements Runnable {
     	public void run() {
     		while(true) {
-    			
+    			try{
+    				Laitos l = laitos.update();
+    				
+    			}catch(Exception e) {
+    				
+    			}
     		}
     	}
     }
