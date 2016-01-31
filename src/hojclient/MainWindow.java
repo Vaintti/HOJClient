@@ -1137,10 +1137,8 @@ public class MainWindow extends javax.swing.JFrame {
     private void reserveSilo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo1ActionPerformed
         // MitÃ¤ tehdÃ¤Ã¤n kun siilo1 varataan?
     	try {
-    		if(laitos.siiloVarattu(0) == false){
-    			laitos.varaaSiilo(0, identifier);	
-    		}
-    	} catch(Exception e) {
+    		laitos.varaaSiilo(0, identifier);
+		}catch(Exception e) {
     		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveSilo1ActionPerformed
@@ -1595,6 +1593,92 @@ public class MainWindow extends javax.swing.JFrame {
     					proc3User.setText("User");
     				}
     				
+    				//Varaukset
+    				if(laitos.siiloVarattu(0) == true){
+    					reserveSilo1.setSelected(true);
+    				}else{
+    					reserveSilo1.setSelected(false);
+    				}
+    				if(laitos.siiloVarattu(1) == true){
+    					reserveSilo2.setSelected(true);
+    				}else{
+    					reserveSilo2.setSelected(false);
+    				}
+    				if(laitos.siiloVarattu(2) == true){
+    					reserveSilo3.setSelected(true);
+    				}else{
+    					reserveSilo3.setSelected(false);
+    				}
+    				if(laitos.siiloVarattu(3) == true){
+    					reserveSilo4.setSelected(true);
+    				}else{
+    					reserveSilo4.setSelected(false);
+    				}
+    				if(laitos.keitinVarattu(0) == true){
+    					reserveProc1.setSelected(true);
+    				}else{
+    					reserveProc1.setSelected(false);
+    				}
+    				if(laitos.keitinVarattu(1) == true){
+    					reserveProc2.setSelected(true);
+    				}else{
+    					reserveProc2.setSelected(false);
+    				}
+    				if(laitos.keitinVarattu(2) == true){
+    					reserveProc3.setSelected(true);
+    				}else{
+    					reserveProc3.setSelected(false);
+    				}
+    				if(laitos.säiliöVarattu(0) == true){
+    					reserveTank1.setSelected(true);
+    				}else{
+    					reserveTank1.setSelected(false);
+    				}
+    				if(laitos.säiliöVarattu(1) == true){
+    					reserveTank2.setSelected(true);
+    				}else{
+    					reserveTank2.setSelected(false);
+    				}
+    				if(laitos.säiliöVarattu(2) == true){
+    					reserveTank3.setSelected(true);
+    				}else{
+    					reserveTank3.setSelected(false);
+    				}
+    				if(laitos.säiliöVarattu(3) == true){
+    					reserveTank4.setSelected(true);
+    				}else{
+    					reserveTank4.setSelected(false);
+    				}
+    				if(laitos.säiliöVarattu(4) == true){
+    					reserveTank5.setSelected(true);
+    				}else{
+    					reserveTank5.setSelected(false);
+    				}
+    				if(laitos.säiliöVarattu(5) == true){
+    					reserveTank6.setSelected(true);
+    				}else{
+    					reserveTank6.setSelected(false);
+    				}
+    				if(laitos.säiliöVarattu(6) == true){
+    					reserveTank7.setSelected(true);
+    				}else{
+    					reserveTank7.setSelected(false);
+    				}
+    				if(laitos.säiliöVarattu(7) == true){
+    					reserveTank8.setSelected(true);
+    				}else{
+    					reserveTank8.setSelected(false);
+    				}
+    				if(laitos.säiliöVarattu(8) == true){
+    					reserveTank9.setSelected(true);
+    				}else{
+    					reserveTank9.setSelected(false);
+    				}
+    				if(laitos.säiliöVarattu(9) == true){
+    					reserveTank10.setSelected(true);
+    				}else{
+    					reserveTank10.setSelected(false);
+    				}
     				//Täyttöasteet
     				silo1Status.setText(Integer.toString(laitos.siilonTäyttöaste(0)));
     				silo2Status.setText(Integer.toString(laitos.siilonTäyttöaste(1)));
