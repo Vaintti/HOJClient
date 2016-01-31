@@ -1575,7 +1575,24 @@ public class MainWindow extends javax.swing.JFrame {
     					startBpump2.setSelected(false);
     				}
     				//Käyttäjät
-    				//proc1User.setText(laitos.keittimenKäyttäjä(0)));
+    				if(laitos.keittimenKäyttäjä(0)!= null){
+    					String[] teksti = laitos.keittimenKäyttäjä(0);
+    					proc1User.setText(teksti[0]);
+    				}else{
+    					proc1User.setText("User");
+    				}
+    				if(laitos.keittimenKäyttäjä(1)!= null){
+    					String[] teksti = laitos.keittimenKäyttäjä(1);
+    					proc1User.setText(teksti[0]);
+    				}else{
+    					proc1User.setText("User");
+    				}
+    				if(laitos.keittimenKäyttäjä(2)!= null){
+    					String[] teksti = laitos.keittimenKäyttäjä(2);
+    					proc1User.setText(teksti[0]);
+    				}else{
+    					proc1User.setText("User");
+    				}
     				
     				//Täyttöasteet
     				silo1Status.setText(Integer.toString(laitos.siilonTäyttöaste(0)));
