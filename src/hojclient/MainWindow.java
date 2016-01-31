@@ -1295,77 +1295,69 @@ public class MainWindow extends javax.swing.JFrame {
     	}
     }//GEN-LAST:event_reserveTank4ActionPerformed
 
-    private void reserveTank5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank5ActionPerformed
-        // MitÃ¤ tehdÃ¤Ã¤n kun sÃ¤iliÃ¶5 varataan?
+    private void reserveTank5ActionPerformed(java.awt.event.ActionEvent evt) {
     	try{
     		laitos.varaaSäiliö(4, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
-    }//GEN-LAST:event_reserveTank5ActionPerformed
+    }
 
-    private void reserveTank6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank6ActionPerformed
-        // MitÃ¤ tehdÃ¤Ã¤n kun sÃ¤iliÃ¶6 varataan?
+    private void reserveTank6ActionPerformed(java.awt.event.ActionEvent evt) {
     	try{
     		laitos.varaaSäiliö(5, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
-    }//GEN-LAST:event_reserveTank6ActionPerformed
+    }
 
-    private void reserveTank7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank7ActionPerformed
-        // MitÃ¤ tehdÃ¤Ã¤n kun sÃ¤iliÃ¶7 varataan?
+    private void reserveTank7ActionPerformed(java.awt.event.ActionEvent evt) {
     	try{
     		laitos.varaaSäiliö(6, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
-    }//GEN-LAST:event_reserveTank7ActionPerformed
+    }
 
-    private void reserveTank8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank8ActionPerformed
-        //  MitÃ¤ tehdÃ¤Ã¤n kun sÃ¤iliÃ¶8 varataan?
+    private void reserveTank8ActionPerformed(java.awt.event.ActionEvent evt) {
     	try{
     		laitos.varaaSäiliö(7, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
-    }//GEN-LAST:event_reserveTank8ActionPerformed
+    }
 
-    private void reserveTank9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank9ActionPerformed
-        // MitÃ¤ tehdÃ¤Ã¤n kun sÃ¤iliÃ¶9 varataan?
+    private void reserveTank9ActionPerformed(java.awt.event.ActionEvent evt) {
     	try{
     		laitos.varaaSäiliö(8, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
-    }//GEN-LAST:event_reserveTank9ActionPerformed
+    }
 
-    private void reserveTank10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank10ActionPerformed
-        // MitÃ¤ tehdÃ¤Ã¤n kun sÃ¤iliÃ¶10 varataan?
+    private void reserveTank10ActionPerformed(java.awt.event.ActionEvent evt) {
     	try{
     		laitos.varaaSäiliö(9, identifier);
     	} catch(Exception e) {
     		System.out.println(e);
     	}
-    }//GEN-LAST:event_reserveTank10ActionPerformed
+    }
 
-    private void procLoadAmount2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procLoadAmount2ActionPerformed
-        // TODO add your handling code here:
+    private void procLoadAmount2ActionPerformed(java.awt.event.ActionEvent evt) {
     	try {
     		laitos.startKeittimienTäytin(1, Integer.parseInt(procLoadAmount2.getText()), identifier);
     	}catch(Exception e) {
     		System.out.println(e);
     	}
-    }//GEN-LAST:event_procLoadAmount2ActionPerformed
+    }
 
-    private void procLoadAmount1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procLoadAmount1ActionPerformed
-        // TODO add your handling code here:
+    private void procLoadAmount1ActionPerformed(java.awt.event.ActionEvent evt) {
     	try {
     		laitos.startKeittimienTäytin(0, Integer.parseInt(procLoadAmount1.getText()), identifier);
     	}catch(Exception e) {
     		System.out.println(e);
     	}
-    }//GEN-LAST:event_procLoadAmount1ActionPerformed
+    }
 
     /**
      * @param args the command line arguments
@@ -1524,10 +1516,50 @@ public class MainWindow extends javax.swing.JFrame {
     				}else{
     					procLoadConvStatus2.setText("Idle");
     				}
+    				if(laitos.keitinProsessoi(0)) {
+    					proc1Status.setText("Processing");
+    				}else{
+    					proc1Status.setText("Idle");
+    				}
+    				if(laitos.keitinProsessoi(1)) {
+    					proc2Status.setText("Processing");
+    				}else{
+    					proc2Status.setText("Idle");
+    				}
+    				if(laitos.keitinProsessoi(2)) {
+    					proc3Status.setText("Processing");
+    				}else{
+    					proc3Status.setText("Idle");
+    				}
+    				if(laitos.pumppuKäytössä(0)) {
+    					pump1Status.setText("Running");
+    				}else{
+    					pump1Status.setText("Idle");
+    				}
+    				if(laitos.pumppuKäytössä(1)) {
+    					pump2Status.setText("Running");
+    				}else{
+    					pump2Status.setText("Idle");
+    				}
+    				if(laitos.pullotusPumppuKäytössä(0)) {
+    					bpump1Status.setText("Running");
+    				}else{
+    					bpump1Status.setText("Idle");
+    				}
     				silo1Status.setText(Integer.toString(laitos.siilonTäyttöaste(0)));
     				silo2Status.setText(Integer.toString(laitos.siilonTäyttöaste(1)));
     				silo3Status.setText(Integer.toString(laitos.siilonTäyttöaste(2)));
     				silo4Status.setText(Integer.toString(laitos.siilonTäyttöaste(3)));
+    				tank1Status.setText(Integer.toString(laitos.säiliönTäyttöaste(0)));
+    				tank2Status.setText(Integer.toString(laitos.säiliönTäyttöaste(1)));
+    				tank3Status.setText(Integer.toString(laitos.säiliönTäyttöaste(2)));
+    				tank4Status.setText(Integer.toString(laitos.säiliönTäyttöaste(3)));
+    				tank5Status.setText(Integer.toString(laitos.säiliönTäyttöaste(4)));
+    				tank6Status.setText(Integer.toString(laitos.säiliönTäyttöaste(5)));
+    				tank7Status.setText(Integer.toString(laitos.säiliönTäyttöaste(6)));
+    				tank8Status.setText(Integer.toString(laitos.säiliönTäyttöaste(7)));
+    				tank9Status.setText(Integer.toString(laitos.säiliönTäyttöaste(8)));
+    				tank10Status.setText(Integer.toString(laitos.säiliönTäyttöaste(9)));
     			}catch(Exception e) {
     				System.out.println(e);
     			}
