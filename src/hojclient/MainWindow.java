@@ -608,7 +608,7 @@ public class MainWindow extends javax.swing.JFrame {
         procPanel.setBackground(new java.awt.Color(204, 204, 204));
 
         proc1Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        proc1Status.setText("Running");
+        proc1Status.setText("Idle");
         proc1Status.setMaximumSize(new java.awt.Dimension(100, 200));
         proc1Status.setMinimumSize(new java.awt.Dimension(100, 20));
         proc1Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -656,13 +656,13 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         proc2Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        proc2Status.setText("Running");
+        proc2Status.setText("Idle");
         proc2Status.setMaximumSize(new java.awt.Dimension(100, 200));
         proc2Status.setMinimumSize(new java.awt.Dimension(100, 20));
         proc2Status.setPreferredSize(new java.awt.Dimension(100, 20));
 
         proc3Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        proc3Status.setText("Running");
+        proc3Status.setText("Idle");
         proc3Status.setMaximumSize(new java.awt.Dimension(100, 200));
         proc3Status.setMinimumSize(new java.awt.Dimension(100, 20));
         proc3Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -769,7 +769,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         siloLoadConvStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        siloLoadConvStatus.setText("Running");
+        siloLoadConvStatus.setText("Idle");
         siloLoadConvStatus.setMaximumSize(new java.awt.Dimension(100, 200));
         siloLoadConvStatus.setMinimumSize(new java.awt.Dimension(100, 20));
         siloLoadConvStatus.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -801,7 +801,7 @@ public class MainWindow extends javax.swing.JFrame {
         siloLoadConvStatus.getAccessibleContext().setAccessibleName("SiloLoadConvStatus");
 
         pump1Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pump1Status.setText("Running");
+        pump1Status.setText("Idle");
         pump1Status.setMaximumSize(new java.awt.Dimension(100, 200));
         pump1Status.setMinimumSize(new java.awt.Dimension(100, 20));
         pump1Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -828,7 +828,7 @@ public class MainWindow extends javax.swing.JFrame {
         pump2Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         pump2Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pump2Status.setText("Running");
+        pump2Status.setText("Idle");
         pump2Status.setMaximumSize(new java.awt.Dimension(100, 200));
         pump2Status.setMinimumSize(new java.awt.Dimension(100, 20));
         pump2Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -877,7 +877,7 @@ public class MainWindow extends javax.swing.JFrame {
         bpump1Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         bpump1Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bpump1Status.setText("Running");
+        bpump1Status.setText("Idle");
         bpump1Status.setMaximumSize(new java.awt.Dimension(100, 200));
         bpump1Status.setMinimumSize(new java.awt.Dimension(100, 20));
         bpump1Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -897,7 +897,7 @@ public class MainWindow extends javax.swing.JFrame {
         bpump2Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         bpump2Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bpump2Status.setText("Running");
+        bpump2Status.setText("Idle");
         bpump2Status.setMaximumSize(new java.awt.Dimension(100, 200));
         bpump2Status.setMinimumSize(new java.awt.Dimension(100, 20));
         bpump2Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -952,7 +952,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         ProcLoadConvStatus1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ProcLoadConvStatus1.setText("Running");
+        ProcLoadConvStatus1.setText("Idle");
         ProcLoadConvStatus1.setMaximumSize(new java.awt.Dimension(100, 200));
         ProcLoadConvStatus1.setMinimumSize(new java.awt.Dimension(100, 20));
         ProcLoadConvStatus1.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -965,7 +965,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         procLoadConvStatus2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        procLoadConvStatus2.setText("Running");
+        procLoadConvStatus2.setText("Idle");
         procLoadConvStatus2.setMaximumSize(new java.awt.Dimension(100, 200));
         procLoadConvStatus2.setMinimumSize(new java.awt.Dimension(100, 20));
         procLoadConvStatus2.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -1092,6 +1092,11 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void startSiloLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSiloLoadActionPerformed
         // TODO Mit√§ tehd√§√§n, kun siilojen t√§yt√∂n ruuvikuljetin k√§ynnistet√§√§n?
+    	try{
+    		laitos.startSiilojenT‰ytin(identifier);
+    	}catch(Exception e) {
+    		
+    	}
     }//GEN-LAST:event_startSiloLoadActionPerformed
 
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
@@ -1100,6 +1105,7 @@ public class MainWindow extends javax.swing.JFrame {
         		registry = LocateRegistry.getRegistry(2020);
             	laitos = (LaitosRajapinta)registry.lookup("laitos");
         		this.identifier = laitos.login(userName.getText());
+        		(new Thread(new Updater())).start();
         	}
         	else {
         		laitos.logout(this.identifier);
@@ -1122,7 +1128,6 @@ public class MainWindow extends javax.swing.JFrame {
         // Mit√§ tehd√§√§n kun keittimen t√§yt√∂n ruuvikuljetin 1 k√§ynnistet√§√§n
     	try {
     		laitos.startKeittimienT‰ytin(1, Integer.parseInt(procLoadAmount2.getText()), identifier);
-    		// TODO procLoadAmount2.kuuntelija
     	} catch(Exception e) {
     		System.out.println(e);
     	}
@@ -1490,14 +1495,41 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField userName;
     private javax.swing.JLabel userNameLabel;
     // End of variables declaration//GEN-END:variables
+    
+    public Laitos update() {
+    	try{
+    		return laitos.update();
+    	}catch(Exception e) {
+    		return null;
+    	}
+    }
+    
     public class Updater implements Runnable {
     	public void run() {
     		while(true) {
     			try{
-    				Laitos l = laitos.update();
-    				if(laitos)
+    				Laitos l = update();
+    				if(laitos.siilonT‰ytt‰j‰K‰ynniss‰()) {
+    					siloLoadConvStatus.setText("Running");
+    				}else{
+    					siloLoadConvStatus.setText("Idle");
+    				}
+    				if(laitos.keittimenK‰ytt‰j‰K‰ynniss‰(0)){
+    					ProcLoadConvStatus1.setText("Running");
+    				}else{
+    					ProcLoadConvStatus1.setText("Idle");
+    				}
+    				if(laitos.keittimenK‰ytt‰j‰K‰ynniss‰(1)) {
+    					procLoadConvStatus2.setText("Running");
+    				}else{
+    					procLoadConvStatus2.setText("Idle");
+    				}
+    				silo1Status.setText(Integer.toString(laitos.siilonT‰yttˆaste(0)));
+    				silo2Status.setText(Integer.toString(laitos.siilonT‰yttˆaste(1)));
+    				silo3Status.setText(Integer.toString(laitos.siilonT‰yttˆaste(2)));
+    				silo4Status.setText(Integer.toString(laitos.siilonT‰yttˆaste(3)));
     			}catch(Exception e) {
-    				
+    				System.out.println(e);
     			}
     		}
     	}
