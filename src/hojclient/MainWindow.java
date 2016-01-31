@@ -1105,6 +1105,7 @@ public class MainWindow extends javax.swing.JFrame {
         		registry = LocateRegistry.getRegistry(2020);
             	laitos = (LaitosRajapinta)registry.lookup("laitos");
         		this.identifier = laitos.login(userName.getText());
+        		System.out.println(this.identifier.toString());
         		(new Thread(new Updater())).start();
         	}
         	else {
@@ -1583,15 +1584,15 @@ public class MainWindow extends javax.swing.JFrame {
     				}
     				if(laitos.keittimenKäyttäjä(1)!= null){
     					String[] teksti = laitos.keittimenKäyttäjä(1);
-    					proc1User.setText(teksti[0]);
+    					proc2User.setText(teksti[0]);
     				}else{
-    					proc1User.setText("User");
+    					proc2User.setText("User");
     				}
     				if(laitos.keittimenKäyttäjä(2)!= null){
     					String[] teksti = laitos.keittimenKäyttäjä(2);
-    					proc1User.setText(teksti[0]);
+    					proc3User.setText(teksti[0]);
     				}else{
-    					proc1User.setText("User");
+    					proc3User.setText("User");
     				}
     				
     				//Täyttöasteet
