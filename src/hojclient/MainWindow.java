@@ -1095,7 +1095,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.startSiilojenTäytin(identifier);
     	}catch(Exception e) {
-    		
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_startSiloLoadActionPerformed
 
@@ -1111,7 +1111,7 @@ public class MainWindow extends javax.swing.JFrame {
         		laitos.logout(this.identifier);
         	}
         }catch(Exception e){
-        	System.out.println(e);
+        	e.printStackTrace();
         }
     }//GEN-LAST:event_signInActionPerformed
 
@@ -1120,7 +1120,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try {
     		laitos.startKeittimienTäytin(0, Integer.parseInt(procLoadAmount1.getText()), identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_startProcLoad1ActionPerformed
 
@@ -1129,16 +1129,18 @@ public class MainWindow extends javax.swing.JFrame {
     	try {
     		laitos.startKeittimienTäytin(1, Integer.parseInt(procLoadAmount2.getText()), identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_startProcLoad2ActionPerformed
 
     private void reserveSilo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo1ActionPerformed
         // MitÃ¤ tehdÃ¤Ã¤n kun siilo1 varataan?
     	try {
-    		laitos.varaaSiilo(0, identifier);
+    		if(laitos.siiloVarattu(0) == false){
+    			laitos.varaaSiilo(0, identifier);	
+    		}
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveSilo1ActionPerformed
 
@@ -1147,7 +1149,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try {
     		laitos.varaaSiilo(1, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveSilo2ActionPerformed
 
@@ -1156,7 +1158,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try {
     		laitos.varaaSiilo(2, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveSilo3ActionPerformed
 
@@ -1165,7 +1167,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try {
     		laitos.varaaSiilo(3, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveSilo4ActionPerformed
 
@@ -1174,7 +1176,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaKeitin(0, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveProc1ActionPerformed
 
@@ -1183,7 +1185,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.käynnistäKeitin(0, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_startProc1ActionPerformed
 
@@ -1192,7 +1194,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaKeitin(1, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveProc2ActionPerformed
 
@@ -1201,7 +1203,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.käynnistäKeitin(1, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_startProc2ActionPerformed
 
@@ -1210,7 +1212,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaKeitin(2, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveProc3ActionPerformed
 
@@ -1219,7 +1221,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.käynnistäKeitin(2, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_startProc3ActionPerformed
 
@@ -1228,7 +1230,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.käynnistäPumppu(0, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_startPump1ActionPerformed
 
@@ -1237,7 +1239,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.käynnistäPumppu(1, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_startPump2ActionPerformed
 
@@ -1246,7 +1248,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.käynnistäPullotusPumppu(0, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_startBpump1ActionPerformed
 
@@ -1255,7 +1257,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.käynnistäPullotusPumppu(1, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_startBpump2ActionPerformed
 
@@ -1264,7 +1266,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaSäiliö(0, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveTank1ActionPerformed
 
@@ -1273,7 +1275,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaSäiliö(1, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveTank2ActionPerformed
 
@@ -1282,7 +1284,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaSäiliö(2, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveTank3ActionPerformed
 
@@ -1291,7 +1293,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaSäiliö(3, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }//GEN-LAST:event_reserveTank4ActionPerformed
 
@@ -1299,7 +1301,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaSäiliö(4, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }
 
@@ -1307,7 +1309,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaSäiliö(5, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }
 
@@ -1315,7 +1317,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaSäiliö(6, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }
 
@@ -1323,7 +1325,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaSäiliö(7, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }
 
@@ -1331,7 +1333,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaSäiliö(8, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }
 
@@ -1339,7 +1341,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try{
     		laitos.varaaSäiliö(9, identifier);
     	} catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }
 
@@ -1347,7 +1349,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try {
     		laitos.startKeittimienTäytin(1, Integer.parseInt(procLoadAmount2.getText()), identifier);
     	}catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }
 
@@ -1355,7 +1357,7 @@ public class MainWindow extends javax.swing.JFrame {
     	try {
     		laitos.startKeittimienTäytin(0, Integer.parseInt(procLoadAmount1.getText()), identifier);
     	}catch(Exception e) {
-    		System.out.println(e);
+    		e.printStackTrace();
     	}
     }
 
@@ -1501,51 +1503,81 @@ public class MainWindow extends javax.swing.JFrame {
     		while(true) {
     			try{
     				Laitos l = update();
+    				//Start napit
     				if(laitos.siilonTäyttäjäKäynnissä()) {
     					siloLoadConvStatus.setText("Running");
+    					startSiloLoad.setSelected(true);
     				}else{
     					siloLoadConvStatus.setText("Idle");
+    					startSiloLoad.setSelected(false);
     				}
     				if(laitos.keittimenKäyttäjäKäynnissä(0)){
     					ProcLoadConvStatus1.setText("Running");
+    					startProcLoad1.setSelected(true);
     				}else{
     					ProcLoadConvStatus1.setText("Idle");
+    					startProcLoad1.setSelected(false);
     				}
     				if(laitos.keittimenKäyttäjäKäynnissä(1)) {
     					procLoadConvStatus2.setText("Running");
+    					startProcLoad2.setSelected(true);
     				}else{
     					procLoadConvStatus2.setText("Idle");
+    					startProcLoad2.setSelected(false);
     				}
     				if(laitos.keitinProsessoi(0)) {
     					proc1Status.setText("Processing");
+    					startProc1.setSelected(true);
     				}else{
     					proc1Status.setText("Idle");
+    					startProc1.setSelected(false);
     				}
     				if(laitos.keitinProsessoi(1)) {
     					proc2Status.setText("Processing");
+    					startProc2.setSelected(true);
     				}else{
     					proc2Status.setText("Idle");
+    					startProc2.setSelected(false);
     				}
     				if(laitos.keitinProsessoi(2)) {
     					proc3Status.setText("Processing");
+    					startProc3.setSelected(true);
     				}else{
     					proc3Status.setText("Idle");
+    					startProc3.setSelected(false);
     				}
     				if(laitos.pumppuKäytössä(0)) {
     					pump1Status.setText("Running");
+    					startPump1.setSelected(true);
     				}else{
     					pump1Status.setText("Idle");
+    					startPump1.setSelected(false);
     				}
     				if(laitos.pumppuKäytössä(1)) {
     					pump2Status.setText("Running");
+    					startPump2.setSelected(true);
     				}else{
     					pump2Status.setText("Idle");
+    					startPump2.setSelected(false);
     				}
     				if(laitos.pullotusPumppuKäytössä(0)) {
     					bpump1Status.setText("Running");
+    					startBpump1.setSelected(true);
     				}else{
     					bpump1Status.setText("Idle");
+    					startBpump1.setSelected(false);
     				}
+    				if(laitos.pullotusPumppuKäytössä(1)) {
+    					bpump2Status.setText("Running");
+    					startBpump2.setSelected(true);
+    				}else{
+    					bpump2Status.setText("Idle");
+    					startBpump2.setSelected(false);
+    				}
+    				//Käyttäjät
+    				//proc1User.setText(laitos.keittimenKäyttäjä(0)));
+    				
+    				//Täyttöasteet
     				silo1Status.setText(Integer.toString(laitos.siilonTäyttöaste(0)));
     				silo2Status.setText(Integer.toString(laitos.siilonTäyttöaste(1)));
     				silo3Status.setText(Integer.toString(laitos.siilonTäyttöaste(2)));
