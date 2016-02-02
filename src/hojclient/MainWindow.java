@@ -614,7 +614,7 @@ public class MainWindow extends javax.swing.JFrame {
         proc1Status.setPreferredSize(new java.awt.Dimension(100, 20));
 
         proc1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        proc1Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/conveyor.jpg"))); // NOI18N
+        proc1Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/processor.jpg"))); // NOI18N
         proc1Label.setText("Processor 1");
         proc1Label.setFocusable(false);
         proc1Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -628,7 +628,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         proc2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        proc2Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/conveyor.jpg"))); // NOI18N
+        proc2Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/processor.jpg"))); // NOI18N
         proc2Label.setText("Processor 2");
         proc2Label.setFocusable(false);
         proc2Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -682,7 +682,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         proc3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        proc3Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/conveyor.jpg"))); // NOI18N
+        proc3Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/processor.jpg"))); // NOI18N
         proc3Label.setText("Processor 3");
         proc3Label.setFocusable(false);
         proc3Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -1091,7 +1091,7 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void startSiloLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSiloLoadActionPerformed
-        // TODO Mit√§ tehd√§√§n, kun siilojen t√§yt√∂n ruuvikuljetin k√§ynnistet√§√§n?
+        // Mit√§ tehd√§√§n, kun siilojen t√§yt√∂n ruuvikuljetin k√§ynnistet√§√§n?
     	try{
     		laitos.startSiilojenT‰ytin(identifier);
     	}catch(Exception e) {
@@ -1501,7 +1501,6 @@ public class MainWindow extends javax.swing.JFrame {
     	public void run() {
     		while(true) {
     			try{
-    				Laitos l = update();
     				//Start napit
     				if(laitos.siilonT‰ytt‰j‰K‰ynniss‰()) {
     					siloLoadConvStatus.setText("Running");
@@ -1524,27 +1523,67 @@ public class MainWindow extends javax.swing.JFrame {
     					procLoadConvStatus2.setText("Idle");
     					startProcLoad2.setSelected(false);
     				}
+    				
     				if(laitos.keitinProsessoi(0)) {
     					proc1Status.setText("Processing");
     					startProc1.setSelected(true);
+    				}else if(laitos.keitinT‰ytyy(0)){
+    					proc1Status.setText("Filling");
+    					startProc1.setSelected(true);
+    				}else if(laitos.keitinTyhjenee(0)){
+    					proc1Status.setText("Emptying");
+    					startProc1.setSelected(true);
+    				}else if(laitos.keitinValmis(0)){
+    					proc1Status.setText("Ready");
+    					startProc1.setSelected(true);
+    				}else if(laitos.keitinT‰ysi(0)){
+    					proc1Status.setText("Full");
+    					startProc1.setSelected(false);
     				}else{
     					proc1Status.setText("Idle");
-    					startProc1.setSelected(false);
+    					startProc1.setSelected(true);
     				}
+    				
     				if(laitos.keitinProsessoi(1)) {
     					proc2Status.setText("Processing");
     					startProc2.setSelected(true);
+    				}else if(laitos.keitinT‰ytyy(1)){
+    					proc2Status.setText("Filling");
+    					startProc2.setSelected(true);
+    				}else if(laitos.keitinTyhjenee(1)){
+    					proc2Status.setText("Emptying");
+    					startProc2.setSelected(true);
+    				}else if(laitos.keitinValmis(1)){
+    					proc2Status.setText("Ready");
+    					startProc2.setSelected(true);
+    				}else if(laitos.keitinT‰ysi(1)){
+    					proc2Status.setText("Full");
+    					startProc2.setSelected(false);
     				}else{
     					proc2Status.setText("Idle");
-    					startProc2.setSelected(false);
+    					startProc2.setSelected(true);
     				}
+    				
     				if(laitos.keitinProsessoi(2)) {
     					proc3Status.setText("Processing");
     					startProc3.setSelected(true);
+    				}else if(laitos.keitinT‰ytyy(2)){
+    					proc3Status.setText("Filling");
+    					startProc3.setSelected(true);
+    				}else if(laitos.keitinTyhjenee(2)){
+    					proc3Status.setText("Emptying");
+    					startProc3.setSelected(true);
+    				}else if(laitos.keitinValmis(2)){
+    					proc3Status.setText("Ready");
+    					startProc3.setSelected(true);
+    				}else if(laitos.keitinT‰ysi(2)){
+    					proc3Status.setText("Full");
+    					startProc3.setSelected(false);
     				}else{
     					proc3Status.setText("Idle");
-    					startProc3.setSelected(false);
+    					startProc3.setSelected(true);
     				}
+
     				if(laitos.pumppuK‰ytˆss‰(0)) {
     					pump1Status.setText("Running");
     					startPump1.setSelected(true);
